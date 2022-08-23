@@ -1,0 +1,522 @@
+ Hi Hi Hi Hi Hi
+
+
+#cities_list = cities_list[[1:]
+
+#1.write a function which returns a list of all cities
+
+
+
+'''with open("C:\\Users\\SVI22\\PycharmProjects\\LearnPython\\cities.csv", "r") as fp:
+        rows_data = fp.readlines()
+        print(type(rows_data))
+
+cities_list = []
+column_headers = rows_data[0].split("\t")
+column_headers = [ch.strip().strip('"') for ch in column_headers]
+city_index = column_headers.index('City')
+for row in rows_data[1:]:
+    cities_list.append(row.split('\t')[city_index])
+
+print(cities_list)
+
+
+
+#1.write a function which returns a list of all cities'''
+
+
+
+with open("C:\\Users\\SVI22\\PycharmProjects\\LearnPython\\cities.csv", "r") as fp:
+        rows_data = fp.readlines()
+        print(type(rows_data))
+
+
+column_headers = rows_data[0].split("\t")
+for ch in column_headers:
+column_headers = ch.strip().strip('"')
+city_index = column_headers.index('City')
+
+#-----
+cities_list = []
+for row in rows_data[1:]:
+    cities_list.append(row.split('\t')[city_index])
+print(cities_list)
+#------
+
+
+#1.write a function which returns a list of all cities
+
+with open("C:\\Users\\SVI22\\PycharmProjects\\LearnPython\\cities.csv", "r") as fp:
+        rows_data = fp.readlines()
+        print(type(rows_data))
+
+
+column_headers_row = rows_data[0].split("\t")
+print(type(column_headers_row))
+column_headers = []
+for ch in column_headers_row:
+    column_headers.append()ch.strip().strip('"')
+    print(type(column_headers))
+    city_index = column_headers.index('City')
+    print(city_index)
+column_headers_row = rows_data[0].split("\t")
+print(type(column_headers_row))
+column_headers = []
+for ch in column_headers_row:
+    column_headers.append(ch.strip().strip('"'))
+    print(type(column_headers))
+city_index = column_headers.index('City')
+print(city_index)column_headers_row = rows_data[0].split("\t")
+print(type(column_headers_row))
+column_headers = []
+for ch in column_headers_row:
+    column_headers.append(ch.strip().strip('"'))
+    print(type(column_headers))
+city_index = column_headers.index('City')
+print(city_index)
+cities_list = []
+for row in rows_data:
+    cities_list.append(row.split('\t')[city_index])
+print(cities_list)
+
+
+#1.write a function which returns a list of all cities
+
+with open("C:\\Users\\SVI22\\PycharmProjects\\LearnPython\\cities.csv", "r") as fp:
+        rows_data = fp.readlines()
+        print(type(rows_data))
+
+
+column_headers_row = rows_data[0].split("\t")
+print(type(column_headers_row))
+for ch in column_headers_row:
+    column_headers = ch.strip().strip('"')
+    print(type(column_headers))
+city_index = column_headers.index('City')
+print(city_index)
+
+column_headers = [ch.strip().strip('"')
+                  for ch in column_headers_row]
+
+cities_list = []
+for row in rows_data:
+    cities_list.append(row.split('\t')[city_index])
+print(cities_list)
+
+
+
+
+#1.write a function which returns a list of all cities
+
+
+
+with open("C:\\Users\\SVI22\\PycharmProjects\\LearnPython\\cities.csv", "r") as fp:
+        rows_data = fp.readlines()
+        print(type(rows_data))
+#..........
+def extract_tidied_fields_for_row(row):
+   row_split_list = row.split("\t")
+   tidied_fields = [field.strip().strip('"') for field in row_split_list]
+   return tidied_fields
+#or
+column_headers = extract_tidied_fields_for_row(rows_data.pop(0))
+city_index = column_headers.index('City')
+#..........
+#-----
+cities_list = []
+
+for row in rows_data:
+    tidied_fields_row = extract_tidied_fields_for_row(row)
+    cities_list.append(tidied_fields_row[city_index])
+print(cities_list)
+#------
+
+
+#Common_city_list
+
+with open("C:\\Users\\SVI22\\PycharmProjects\\LearnPython\\cities.csv", "r") as fp:
+        rows_data = fp.readlines()
+        print(type(rows_data))
+
+def extract_tidied_fields(row):
+    fields = [field.strip().strip('"') for field in row.split('\t')]
+    return fields
+
+
+headers = extract_tidied_fields(rows_data.pop(0))
+city_index = headers.index("City")
+state_index = headers.index("State")
+
+rows = [extract_tidied_fields(row) for row in rows_data]
+
+
+cities = {}
+for row in rows:
+    city = row[city_index]
+    state = row[state_index]
+    if city not in cities:
+        cities[city] = [state]
+    else:
+        cities[city].append(state)
+
+common_cities = []
+for city, states in cities.items():
+    if len(states) > 1:
+     common_cities.append(city)
+
+pass
+.......
+city = str(row[city_index])
+  print(type(city))
+  state = str(row[state_index])
+  if city in state:
+        cities_list.append(city)
+        print(cities_list)
+
+
+import pprint
+pprint.pprint(afghan_hound_list) #clear output of a list line by line
+'''
+if max: #or
+if max is not None:
+        afghan_hound_list = afghan_hound_list[:max]'''
+
+#conversion of string to int
+cholesterol = "95 mg"
+    output = cholesterol.split(" ")
+    print(output)
+    print(output[0])
+    #print(type(output[0]))
+    cholesterol_value = int(output[0])
+    print(type(cholesterol_value))
+
+
+ for item in output:
+ try:
+            cholesterol_list = item["Cholesterol"].split(" ")
+        except (KeyError, AttributeError) as e:
+            print(e)
+            print(item)
+            continue
+ #if not isinstance(item['Cholesterol'], str):
+        #    continue
+
+        #cholesterol_list = item["Cholesterol"].split(" ")
+
+         if 'Cholesterol' not in item:
+            continue
+
+#100gm
+#find all the taste f the fish, delicate nutty
+#find images from image gallery if image is present
+#find species and scientific name
+get_fish(high_calories)
+func(dict)
+key is carb > 5
+carb>5
+
+
+C:\Users\SVI22\PycharmProjects\PythonSessions\venv\Scripts\python.exe "C:\Program Files\JetBrains\PyCharm Community Edition 2021.3\plugins\python-ce\helpers\pydev\pydevconsole.py" --mode=client --port=62038
+import sys; print('Python %s on %s' % (sys.version, sys.platform))
+sys.path.extend(['C:\\Users\\SVI22\\PycharmProjects\\PythonSessions', 'C:/Users/SVI22/PycharmProjects/PythonSessions'])
+PyDev console: starting.
+Python 3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)] on win32
+l = [3,2,1]
+l[0]
+3
+l[1]
+2
+l[2]
+1
+l[3]
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+IndexError: list index out of range
+l[-1]
+1
+l[-3]
+3
+l[-4]
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+IndexError: list index out of range
+weoid = 3
+url = 'http://1.2.3.4/api'
+weoid + url
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+url + weoid
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str
+url + str(weoid)
+'http://1.2.3.4/api3'
+f'{url}'
+'http://1.2.3.4/api'
+f'{url}{weoid}'
+'http://1.2.3.4/api3'
+int('s')
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: 's'
+int('1')
+1
+int(1)
+1
+l[1]
+2
+l['1']
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+TypeError: list indices must be integers or slices, not str
+l['hyderabad']
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+TypeError: list indices must be integers or slices, not str
+i = 1
+l[i]
+2
+i = 1,
+i
+(1,)
+l[i]
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+TypeError: list indices must be integers or slices, not tuple
+html_string = "<ul>\n<li>American lobster is a crustacean with a large shrimp-like body and 10 legs, two of which are large, strong claws.</li>\n</ul>\n<ul>\n<li>One claw is a big-toothed crusher claw for pulverizing shells, and the other is a finer-edged ripper claw, resembling a steak knife, for tearing soft flesh.</li>\n</ul>\n<ul>\n<li><a href=\"https://www.greateratlantic.fisheries.noaa.gov/regs/infodocs/lobster_sex_id.pdf\">Male and female lobsters</a> can be distinguished by the first pair of swimmerets (pleopods) on the upper portion of the underside of the tail. The male swimmerets are larger and more rigid. The female swimmerets are softer, smaller, and have rounded edges.</li>\n</ul>\n<ul>\n<li>Live lobsters are not red like those you see in a restaurant or grocery store, after they have been cooked. Most are either olive-green or greenish-brown. Some have orange, reddish, dark green, or black speckles and bluish colors in the joints of their appendages.</li>\n</ul>\n"
+html_string.split()
+['<ul>', '<li>American', 'lobster', 'is', 'a', 'crustacean', 'with', 'a', 'large', 'shrimp-like', 'body', 'and', '10', 'legs,', 'two', 'of', 'which', 'are', 'large,', 'strong', 'claws.</li>', '</ul>', '<ul>', '<li>One', 'claw', 'is', 'a', 'big-toothed', 'crusher', 'claw', 'for', 'pulverizing', 'shells,', 'and', 'the', 'other', 'is', 'a', 'finer-edged', 'ripper', 'claw,', 'resembling', 'a', 'steak', 'knife,', 'for', 'tearing', 'soft', 'flesh.</li>', '</ul>', '<ul>', '<li><a', 'href="https://www.greateratlantic.fisheries.noaa.gov/regs/infodocs/lobster_sex_id.pdf">Male', 'and', 'female', 'lobsters</a>', 'can', 'be', 'distinguished', 'by', 'the', 'first', 'pair', 'of', 'swimmerets', '(pleopods)', 'on', 'the', 'upper', 'portion', 'of', 'the', 'underside', 'of', 'the', 'tail.', 'The', 'male', 'swimmerets', 'are', 'larger', 'and', 'more', 'rigid.', 'The', 'female', 'swimmerets', 'are', 'softer,', 'smaller,', 'and', 'have', 'rounded', 'edges.</li>', '</ul>', '<ul>', '<li>Live', 'lobsters', 'are', 'not', 'red', 'like', 'those', 'you', 'see', 'in', 'a', 'restaurant', 'or', 'grocery', 'store,', 'after', 'they', 'have', 'been', 'cooked.', 'Most', 'are', 'either', 'olive-green', 'or', 'greenish-brown.', 'Some', 'have', 'orange,', 'reddish,', 'dark', 'green,', 'or', 'black', 'speckles', 'and', 'bluish', 'colors', 'in', 'the', 'joints', 'of', 'their', 'appendages.</li>', '</ul>']
+html_string.replace('American', 'Californian')
+'<ul>\n<li>Californian lobster is a crustacean with a large shrimp-like body and 10 legs, two of which are large, strong claws.</li>\n</ul>\n<ul>\n<li>One claw is a big-toothed crusher claw for pulverizing shells, and the other is a finer-edged ripper claw, resembling a steak knife, for tearing soft flesh.</li>\n</ul>\n<ul>\n<li><a href="https://www.greateratlantic.fisheries.noaa.gov/regs/infodocs/lobster_sex_id.pdf">Male and female lobsters</a> can be distinguished by the first pair of swimmerets (pleopods) on the upper portion of the underside of the tail. The male swimmerets are larger and more rigid. The female swimmerets are softer, smaller, and have rounded edges.</li>\n</ul>\n<ul>\n<li>Live lobsters are not red like those you see in a restaurant or grocery store, after they have been cooked. Most are either olive-green or greenish-brown. Some have orange, reddish, dark green, or black speckles and bluish colors in the joints of their appendages.</li>\n</ul>\n'
+html_string.replace('American', '')
+'<ul>\n<li> lobster is a crustacean with a large shrimp-like body and 10 legs, two of which are large, strong claws.</li>\n</ul>\n<ul>\n<li>One claw is a big-toothed crusher claw for pulverizing shells, and the other is a finer-edged ripper claw, resembling a steak knife, for tearing soft flesh.</li>\n</ul>\n<ul>\n<li><a href="https://www.greateratlantic.fisheries.noaa.gov/regs/infodocs/lobster_sex_id.pdf">Male and female lobsters</a> can be distinguished by the first pair of swimmerets (pleopods) on the upper portion of the underside of the tail. The male swimmerets are larger and more rigid. The female swimmerets are softer, smaller, and have rounded edges.</li>\n</ul>\n<ul>\n<li>Live lobsters are not red like those you see in a restaurant or grocery store, after they have been cooked. Most are either olive-green or greenish-brown. Some have orange, reddish, dark green, or black speckles and bluish colors in the joints of their appendages.</li>\n</ul>\n'
+html_string.replace('<ul>', '')
+'\n<li>American lobster is a crustacean with a large shrimp-like body and 10 legs, two of which are large, strong claws.</li>\n</ul>\n\n<li>One claw is a big-toothed crusher claw for pulverizing shells, and the other is a finer-edged ripper claw, resembling a steak knife, for tearing soft flesh.</li>\n</ul>\n\n<li><a href="https://www.greateratlantic.fisheries.noaa.gov/regs/infodocs/lobster_sex_id.pdf">Male and female lobsters</a> can be distinguished by the first pair of swimmerets (pleopods) on the upper portion of the underside of the tail. The male swimmerets are larger and more rigid. The female swimmerets are softer, smaller, and have rounded edges.</li>\n</ul>\n\n<li>Live lobsters are not red like those you see in a restaurant or grocery store, after they have been cooked. Most are either olive-green or greenish-brown. Some have orange, reddish, dark green, or black speckles and bluish colors in the joints of their appendages.</li>\n</ul>\n'
+html_string.replace('<ul>', '').replace('<li>', '')
+'\nAmerican lobster is a crustacean with a large shrimp-like body and 10 legs, two of which are large, strong claws.</li>\n</ul>\n\nOne claw is a big-toothed crusher claw for pulverizing shells, and the other is a finer-edged ripper claw, resembling a steak knife, for tearing soft flesh.</li>\n</ul>\n\n<a href="https://www.greateratlantic.fisheries.noaa.gov/regs/infodocs/lobster_sex_id.pdf">Male and female lobsters</a> can be distinguished by the first pair of swimmerets (pleopods) on the upper portion of the underside of the tail. The male swimmerets are larger and more rigid. The female swimmerets are softer, smaller, and have rounded edges.</li>\n</ul>\n\nLive lobsters are not red like those you see in a restaurant or grocery store, after they have been cooked. Most are either olive-green or greenish-brown. Some have orange, reddish, dark green, or black speckles and bluish colors in the joints of their appendages.</li>\n</ul>\n'
+html_string.replace('<ul>', '').replace('<li>', '').split()
+['American', 'lobster', 'is', 'a', 'crustacean', 'with', 'a', 'large', 'shrimp-like', 'body', 'and', '10', 'legs,', 'two', 'of', 'which', 'are', 'large,', 'strong', 'claws.</li>', '</ul>', 'One', 'claw', 'is', 'a', 'big-toothed', 'crusher', 'claw', 'for', 'pulverizing', 'shells,', 'and', 'the', 'other', 'is', 'a', 'finer-edged', 'ripper', 'claw,', 'resembling', 'a', 'steak', 'knife,', 'for', 'tearing', 'soft', 'flesh.</li>', '</ul>', '<a', 'href="https://www.greateratlantic.fisheries.noaa.gov/regs/infodocs/lobster_sex_id.pdf">Male', 'and', 'female', 'lobsters</a>', 'can', 'be', 'distinguished', 'by', 'the', 'first', 'pair', 'of', 'swimmerets', '(pleopods)', 'on', 'the', 'upper', 'portion', 'of', 'the', 'underside', 'of', 'the', 'tail.', 'The', 'male', 'swimmerets', 'are', 'larger', 'and', 'more', 'rigid.', 'The', 'female', 'swimmerets', 'are', 'softer,', 'smaller,', 'and', 'have', 'rounded', 'edges.</li>', '</ul>', 'Live', 'lobsters', 'are', 'not', 'red', 'like', 'those', 'you', 'see', 'in', 'a', 'restaurant', 'or', 'grocery', 'store,', 'after', 'they', 'have', 'been', 'cooked.', 'Most', 'are', 'either', 'olive-green', 'or', 'greenish-brown.', 'Some', 'have', 'orange,', 'reddish,', 'dark', 'green,', 'or', 'black', 'speckles', 'and', 'bluish', 'colors', 'in', 'the', 'joints', 'of', 'their', 'appendages.</li>', '</ul>']
+html_string.replace('<ul>', '').replace('<li>', '')
+'\nAmerican lobster is a crustacean with a large shrimp-like body and 10 legs, two of which are large, strong claws.</li>\n</ul>\n\nOne claw is a big-toothed crusher claw for pulverizing shells, and the other is a finer-edged ripper claw, resembling a steak knife, for tearing soft flesh.</li>\n</ul>\n\n<a href="https://www.greateratlantic.fisheries.noaa.gov/regs/infodocs/lobster_sex_id.pdf">Male and female lobsters</a> can be distinguished by the first pair of swimmerets (pleopods) on the upper portion of the underside of the tail. The male swimmerets are larger and more rigid. The female swimmerets are softer, smaller, and have rounded edges.</li>\n</ul>\n\nLive lobsters are not red like those you see in a restaurant or grocery store, after they have been cooked. Most are either olive-green or greenish-brown. Some have orange, reddish, dark green, or black speckles and bluish colors in the joints of their appendages.</li>\n</ul>\n'
+fisheries = "<ul>\n<li><a href=\"http://www.westcoast.fisheries.noaa.gov/\">NOAA Fisheries</a> and the <a href=\"http://www.pcouncil.org/\">Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the <a href=\"http://www.pcouncil.org/groundfish/fishery-management-plan/\">Pacific Coast Groundfish Fishery Management Plan</a>:\n<ul>\n<li>Permits and limited entry to the fishery.</li>\n<li>Limit on how much may be harvested in one fishing trip.</li>\n<li>Certain seasons and <a href=\"http://www.westcoast.fisheries.noaa.gov/fisheries/management/groundfish_closures/groundfish_closed_areas.html\">areas are closed</a> to fishing.</li>\n<li>Gear restrictions help reduce bycatch and impacts on habitat.</li>\n<li>A <a href=\"http://www.westcoast.fisheries.noaa.gov/fisheries/groundfish_catch_shares/index.html\">trawl rationalization catch share program</a> that includes:</li>\n<li>Catch limits based on the population status of each fish stock and divided into shares that are allocated to individual fishermen or groups.</li>\n<li>Provisions that allow fishermen to decide how and when to catch their share.</li>\n<li>Yellowtail rockfish have been underutilized. The recent harvest rule changes to the catch share program will allow increased catches of underutilized species, such as yellowtail and chilipepper rockfish, <a href=\"https://www.fishwatch.gov/profiles/lingcod\">lingcod</a>, and <a href=\"https://www.fishwatch.gov/profiles/pacific-cod\">Pacific cod</a>. These changes were possible because of improvements observed in other stocks that had previously constrained the harvest of fish like yellowtail rockfish due to low population levels.</li>\n</ul>\n</li>\n<li><a href=\"https://alaskafisheries.noaa.gov/\">NOAA Fisheries</a> and the <a href=\"https://www.npfmc.org/\">North Pacific Fishery Management Council</a> manage yellowtail rockfish as part of the Gulf of Alaska other rockfish complex.</li>\n<li>Managed under the <a href=\"https://www.npfmc.org/wp-content/PDFdocuments/fmp/GOA/GOAfmp.pdf\">Fishery Management Plan for Groundfish of the Gulf of Alaska</a>:\n<ul>\n<li>There is no directed fishing for this species in the Gulf of Alaska, and only minor amounts are landed incidentally in other fisheries.</li>\n</ul>\n</li>\n</ul>\n"
+fisheries.split('<a href=\"')
+['<ul>\n<li>', 'http://www.westcoast.fisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'http://www.pcouncil.org/">Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the ', 'http://www.pcouncil.org/groundfish/fishery-management-plan/">Pacific Coast Groundfish Fishery Management Plan</a>:\n<ul>\n<li>Permits and limited entry to the fishery.</li>\n<li>Limit on how much may be harvested in one fishing trip.</li>\n<li>Certain seasons and ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/management/groundfish_closures/groundfish_closed_areas.html">areas are closed</a> to fishing.</li>\n<li>Gear restrictions help reduce bycatch and impacts on habitat.</li>\n<li>A ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/groundfish_catch_shares/index.html">trawl rationalization catch share program</a> that includes:</li>\n<li>Catch limits based on the population status of each fish stock and divided into shares that are allocated to individual fishermen or groups.</li>\n<li>Provisions that allow fishermen to decide how and when to catch their share.</li>\n<li>Yellowtail rockfish have been underutilized. The recent harvest rule changes to the catch share program will allow increased catches of underutilized species, such as yellowtail and chilipepper rockfish, ', 'https://www.fishwatch.gov/profiles/lingcod">lingcod</a>, and ', 'https://www.fishwatch.gov/profiles/pacific-cod">Pacific cod</a>. These changes were possible because of improvements observed in other stocks that had previously constrained the harvest of fish like yellowtail rockfish due to low population levels.</li>\n</ul>\n</li>\n<li>', 'https://alaskafisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'https://www.npfmc.org/">North Pacific Fishery Management Council</a> manage yellowtail rockfish as part of the Gulf of Alaska other rockfish complex.</li>\n<li>Managed under the ', 'https://www.npfmc.org/wp-content/PDFdocuments/fmp/GOA/GOAfmp.pdf">Fishery Management Plan for Groundfish of the Gulf of Alaska</a>:\n<ul>\n<li>There is no directed fishing for this species in the Gulf of Alaska, and only minor amounts are landed incidentally in other fisheries.</li>\n</ul>\n</li>\n</ul>\n']
+fisheries.split('<a href=\"')[1]
+'http://www.westcoast.fisheries.noaa.gov/">NOAA Fisheries</a> and the '
+fisheries.split('<a href=\"')[1].split('">')
+['http://www.westcoast.fisheries.noaa.gov/', 'NOAA Fisheries</a> and the ']
+fisheries.split('<a href=\"')[1].split('">')[0]
+'http://www.westcoast.fisheries.noaa.gov/'
+[link for link in fisheries.split('<a href=\"')]
+['<ul>\n<li>', 'http://www.westcoast.fisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'http://www.pcouncil.org/">Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the ', 'http://www.pcouncil.org/groundfish/fishery-management-plan/">Pacific Coast Groundfish Fishery Management Plan</a>:\n<ul>\n<li>Permits and limited entry to the fishery.</li>\n<li>Limit on how much may be harvested in one fishing trip.</li>\n<li>Certain seasons and ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/management/groundfish_closures/groundfish_closed_areas.html">areas are closed</a> to fishing.</li>\n<li>Gear restrictions help reduce bycatch and impacts on habitat.</li>\n<li>A ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/groundfish_catch_shares/index.html">trawl rationalization catch share program</a> that includes:</li>\n<li>Catch limits based on the population status of each fish stock and divided into shares that are allocated to individual fishermen or groups.</li>\n<li>Provisions that allow fishermen to decide how and when to catch their share.</li>\n<li>Yellowtail rockfish have been underutilized. The recent harvest rule changes to the catch share program will allow increased catches of underutilized species, such as yellowtail and chilipepper rockfish, ', 'https://www.fishwatch.gov/profiles/lingcod">lingcod</a>, and ', 'https://www.fishwatch.gov/profiles/pacific-cod">Pacific cod</a>. These changes were possible because of improvements observed in other stocks that had previously constrained the harvest of fish like yellowtail rockfish due to low population levels.</li>\n</ul>\n</li>\n<li>', 'https://alaskafisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'https://www.npfmc.org/">North Pacific Fishery Management Council</a> manage yellowtail rockfish as part of the Gulf of Alaska other rockfish complex.</li>\n<li>Managed under the ', 'https://www.npfmc.org/wp-content/PDFdocuments/fmp/GOA/GOAfmp.pdf">Fishery Management Plan for Groundfish of the Gulf of Alaska</a>:\n<ul>\n<li>There is no directed fishing for this species in the Gulf of Alaska, and only minor amounts are landed incidentally in other fisheries.</li>\n</ul>\n</li>\n</ul>\n']
+[link for link in fisheries.split('<a href=\"') if link.startwith('http')]
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+  File "<input>", line 1, in <listcomp>
+AttributeError: 'str' object has no attribute 'startwith'
+[link for link in fisheries.split('<a href=\"') if link.startswith('http')]
+['http://www.westcoast.fisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'http://www.pcouncil.org/">Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the ', 'http://www.pcouncil.org/groundfish/fishery-management-plan/">Pacific Coast Groundfish Fishery Management Plan</a>:\n<ul>\n<li>Permits and limited entry to the fishery.</li>\n<li>Limit on how much may be harvested in one fishing trip.</li>\n<li>Certain seasons and ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/management/groundfish_closures/groundfish_closed_areas.html">areas are closed</a> to fishing.</li>\n<li>Gear restrictions help reduce bycatch and impacts on habitat.</li>\n<li>A ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/groundfish_catch_shares/index.html">trawl rationalization catch share program</a> that includes:</li>\n<li>Catch limits based on the population status of each fish stock and divided into shares that are allocated to individual fishermen or groups.</li>\n<li>Provisions that allow fishermen to decide how and when to catch their share.</li>\n<li>Yellowtail rockfish have been underutilized. The recent harvest rule changes to the catch share program will allow increased catches of underutilized species, such as yellowtail and chilipepper rockfish, ', 'https://www.fishwatch.gov/profiles/lingcod">lingcod</a>, and ', 'https://www.fishwatch.gov/profiles/pacific-cod">Pacific cod</a>. These changes were possible because of improvements observed in other stocks that had previously constrained the harvest of fish like yellowtail rockfish due to low population levels.</li>\n</ul>\n</li>\n<li>', 'https://alaskafisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'https://www.npfmc.org/">North Pacific Fishery Management Council</a> manage yellowtail rockfish as part of the Gulf of Alaska other rockfish complex.</li>\n<li>Managed under the ', 'https://www.npfmc.org/wp-content/PDFdocuments/fmp/GOA/GOAfmp.pdf">Fishery Management Plan for Groundfish of the Gulf of Alaska</a>:\n<ul>\n<li>There is no directed fishing for this species in the Gulf of Alaska, and only minor amounts are landed incidentally in other fisheries.</li>\n</ul>\n</li>\n</ul>\n']
+[link for link in fisheries.split('<a href=\"') if link.startswith('http')][0]
+'http://www.westcoast.fisheries.noaa.gov/">NOAA Fisheries</a> and the '
+[link for link in fisheries.split('<a href=\"') if link.startswith('http')][1]
+'http://www.pcouncil.org/">Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the '
+[link for link in fisheries.split('<a href=\"') if link.startswith('http')][1].split('">')
+['http://www.pcouncil.org/', 'Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the ']
+type([link for link in fisheries.split('<a href=\"') if link.startswith('http')][1].split('">'))
+<class 'list'>
+[link for link in fisheries.split('<a href=\"') if link.startswith('http')][1].split('">')[-1]
+'Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the '
+[link for link in fisheries.split('<a href=\"') if link.startswith('http')][1].split('">')[0]
+'http://www.pcouncil.org/'
+[link for link in fisheries.split('<a href=\"') if link.startswith('http')]
+['http://www.westcoast.fisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'http://www.pcouncil.org/">Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the ', 'http://www.pcouncil.org/groundfish/fishery-management-plan/">Pacific Coast Groundfish Fishery Management Plan</a>:\n<ul>\n<li>Permits and limited entry to the fishery.</li>\n<li>Limit on how much may be harvested in one fishing trip.</li>\n<li>Certain seasons and ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/management/groundfish_closures/groundfish_closed_areas.html">areas are closed</a> to fishing.</li>\n<li>Gear restrictions help reduce bycatch and impacts on habitat.</li>\n<li>A ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/groundfish_catch_shares/index.html">trawl rationalization catch share program</a> that includes:</li>\n<li>Catch limits based on the population status of each fish stock and divided into shares that are allocated to individual fishermen or groups.</li>\n<li>Provisions that allow fishermen to decide how and when to catch their share.</li>\n<li>Yellowtail rockfish have been underutilized. The recent harvest rule changes to the catch share program will allow increased catches of underutilized species, such as yellowtail and chilipepper rockfish, ', 'https://www.fishwatch.gov/profiles/lingcod">lingcod</a>, and ', 'https://www.fishwatch.gov/profiles/pacific-cod">Pacific cod</a>. These changes were possible because of improvements observed in other stocks that had previously constrained the harvest of fish like yellowtail rockfish due to low population levels.</li>\n</ul>\n</li>\n<li>', 'https://alaskafisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'https://www.npfmc.org/">North Pacific Fishery Management Council</a> manage yellowtail rockfish as part of the Gulf of Alaska other rockfish complex.</li>\n<li>Managed under the ', 'https://www.npfmc.org/wp-content/PDFdocuments/fmp/GOA/GOAfmp.pdf">Fishery Management Plan for Groundfish of the Gulf of Alaska</a>:\n<ul>\n<li>There is no directed fishing for this species in the Gulf of Alaska, and only minor amounts are landed incidentally in other fisheries.</li>\n</ul>\n</li>\n</ul>\n']
+[link.split('">') for link in fisheries.split('<a href=\"') if link.startswith('http')]
+[['http://www.westcoast.fisheries.noaa.gov/', 'NOAA Fisheries</a> and the '], ['http://www.pcouncil.org/', 'Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the '], ['http://www.pcouncil.org/groundfish/fishery-management-plan/', 'Pacific Coast Groundfish Fishery Management Plan</a>:\n<ul>\n<li>Permits and limited entry to the fishery.</li>\n<li>Limit on how much may be harvested in one fishing trip.</li>\n<li>Certain seasons and '], ['http://www.westcoast.fisheries.noaa.gov/fisheries/management/groundfish_closures/groundfish_closed_areas.html', 'areas are closed</a> to fishing.</li>\n<li>Gear restrictions help reduce bycatch and impacts on habitat.</li>\n<li>A '], ['http://www.westcoast.fisheries.noaa.gov/fisheries/groundfish_catch_shares/index.html', 'trawl rationalization catch share program</a> that includes:</li>\n<li>Catch limits based on the population status of each fish stock and divided into shares that are allocated to individual fishermen or groups.</li>\n<li>Provisions that allow fishermen to decide how and when to catch their share.</li>\n<li>Yellowtail rockfish have been underutilized. The recent harvest rule changes to the catch share program will allow increased catches of underutilized species, such as yellowtail and chilipepper rockfish, '], ['https://www.fishwatch.gov/profiles/lingcod', 'lingcod</a>, and '], ['https://www.fishwatch.gov/profiles/pacific-cod', 'Pacific cod</a>. These changes were possible because of improvements observed in other stocks that had previously constrained the harvest of fish like yellowtail rockfish due to low population levels.</li>\n</ul>\n</li>\n<li>'], ['https://alaskafisheries.noaa.gov/', 'NOAA Fisheries</a> and the '], ['https://www.npfmc.org/', 'North Pacific Fishery Management Council</a> manage yellowtail rockfish as part of the Gulf of Alaska other rockfish complex.</li>\n<li>Managed under the '], ['https://www.npfmc.org/wp-content/PDFdocuments/fmp/GOA/GOAfmp.pdf', 'Fishery Management Plan for Groundfish of the Gulf of Alaska</a>:\n<ul>\n<li>There is no directed fishing for this species in the Gulf of Alaska, and only minor amounts are landed incidentally in other fisheries.</li>\n</ul>\n</li>\n</ul>\n']]
+ll = [link.split('">') for link in fisheries.split('<a href=\"') if link.startswith('http')]
+l = [link for link in fisheries.split('<a href=\"') if link.startswith('http')]
+ll[0]
+['http://www.westcoast.fisheries.noaa.gov/', 'NOAA Fisheries</a> and the ']
+ll[0][0]
+'http://www.westcoast.fisheries.noaa.gov/'
+ll = [link.split('">')[0] for link in fisheries.split('<a href=\"') if link.startswith('http')]
+
+
+
+C:\Users\SVI22\PycharmProjects\PythonSessions\venv\Scripts\python.exe "C:\Program Files\JetBrains\PyCharm Community Edition 2021.3\plugins\python-ce\helpers\pydev\pydevconsole.py" --mode=client --port=62038
+import sys; print('Python %s on %s' % (sys.version, sys.platform))
+sys.path.extend(['C:\\Users\\SVI22\\PycharmProjects\\PythonSessions', 'C:/Users/SVI22/PycharmProjects/PythonSessions'])
+PyDev console: starting.
+Python 3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)] on win32
+l = [3,2,1]
+l[0]
+3
+l[1]
+2
+l[2]
+1
+l[3]
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+IndexError: list index out of range
+l[-1]
+1
+l[-3]
+3
+l[-4]
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+IndexError: list index out of range
+weoid = 3
+url = 'http://1.2.3.4/api'
+weoid + url
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+url + weoid
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str
+url + str(weoid)
+'http://1.2.3.4/api3'
+f'{url}'
+'http://1.2.3.4/api'
+f'{url}{weoid}'
+'http://1.2.3.4/api3'
+int('s')
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: 's'
+int('1')
+1
+int(1)
+1
+l[1]
+2
+l['1']
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+TypeError: list indices must be integers or slices, not str
+l['hyderabad']
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+TypeError: list indices must be integers or slices, not str
+i = 1
+l[i]
+2
+i = 1,
+i
+(1,)
+l[i]
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+TypeError: list indices must be integers or slices, not tuple
+html_string = "<ul>\n<li>American lobster is a crustacean with a large shrimp-like body and 10 legs, two of which are large, strong claws.</li>\n</ul>\n<ul>\n<li>One claw is a big-toothed crusher claw for pulverizing shells, and the other is a finer-edged ripper claw, resembling a steak knife, for tearing soft flesh.</li>\n</ul>\n<ul>\n<li><a href=\"https://www.greateratlantic.fisheries.noaa.gov/regs/infodocs/lobster_sex_id.pdf\">Male and female lobsters</a> can be distinguished by the first pair of swimmerets (pleopods) on the upper portion of the underside of the tail. The male swimmerets are larger and more rigid. The female swimmerets are softer, smaller, and have rounded edges.</li>\n</ul>\n<ul>\n<li>Live lobsters are not red like those you see in a restaurant or grocery store, after they have been cooked. Most are either olive-green or greenish-brown. Some have orange, reddish, dark green, or black speckles and bluish colors in the joints of their appendages.</li>\n</ul>\n"
+html_string.split()
+['<ul>', '<li>American', 'lobster', 'is', 'a', 'crustacean', 'with', 'a', 'large', 'shrimp-like', 'body', 'and', '10', 'legs,', 'two', 'of', 'which', 'are', 'large,', 'strong', 'claws.</li>', '</ul>', '<ul>', '<li>One', 'claw', 'is', 'a', 'big-toothed', 'crusher', 'claw', 'for', 'pulverizing', 'shells,', 'and', 'the', 'other', 'is', 'a', 'finer-edged', 'ripper', 'claw,', 'resembling', 'a', 'steak', 'knife,', 'for', 'tearing', 'soft', 'flesh.</li>', '</ul>', '<ul>', '<li><a', 'href="https://www.greateratlantic.fisheries.noaa.gov/regs/infodocs/lobster_sex_id.pdf">Male', 'and', 'female', 'lobsters</a>', 'can', 'be', 'distinguished', 'by', 'the', 'first', 'pair', 'of', 'swimmerets', '(pleopods)', 'on', 'the', 'upper', 'portion', 'of', 'the', 'underside', 'of', 'the', 'tail.', 'The', 'male', 'swimmerets', 'are', 'larger', 'and', 'more', 'rigid.', 'The', 'female', 'swimmerets', 'are', 'softer,', 'smaller,', 'and', 'have', 'rounded', 'edges.</li>', '</ul>', '<ul>', '<li>Live', 'lobsters', 'are', 'not', 'red', 'like', 'those', 'you', 'see', 'in', 'a', 'restaurant', 'or', 'grocery', 'store,', 'after', 'they', 'have', 'been', 'cooked.', 'Most', 'are', 'either', 'olive-green', 'or', 'greenish-brown.', 'Some', 'have', 'orange,', 'reddish,', 'dark', 'green,', 'or', 'black', 'speckles', 'and', 'bluish', 'colors', 'in', 'the', 'joints', 'of', 'their', 'appendages.</li>', '</ul>']
+html_string.replace('American', 'Californian')
+'<ul>\n<li>Californian lobster is a crustacean with a large shrimp-like body and 10 legs, two of which are large, strong claws.</li>\n</ul>\n<ul>\n<li>One claw is a big-toothed crusher claw for pulverizing shells, and the other is a finer-edged ripper claw, resembling a steak knife, for tearing soft flesh.</li>\n</ul>\n<ul>\n<li><a href="https://www.greateratlantic.fisheries.noaa.gov/regs/infodocs/lobster_sex_id.pdf">Male and female lobsters</a> can be distinguished by the first pair of swimmerets (pleopods) on the upper portion of the underside of the tail. The male swimmerets are larger and more rigid. The female swimmerets are softer, smaller, and have rounded edges.</li>\n</ul>\n<ul>\n<li>Live lobsters are not red like those you see in a restaurant or grocery store, after they have been cooked. Most are either olive-green or greenish-brown. Some have orange, reddish, dark green, or black speckles and bluish colors in the joints of their appendages.</li>\n</ul>\n'
+html_string.replace('American', '')
+'<ul>\n<li> lobster is a crustacean with a large shrimp-like body and 10 legs, two of which are large, strong claws.</li>\n</ul>\n<ul>\n<li>One claw is a big-toothed crusher claw for pulverizing shells, and the other is a finer-edged ripper claw, resembling a steak knife, for tearing soft flesh.</li>\n</ul>\n<ul>\n<li><a href="https://www.greateratlantic.fisheries.noaa.gov/regs/infodocs/lobster_sex_id.pdf">Male and female lobsters</a> can be distinguished by the first pair of swimmerets (pleopods) on the upper portion of the underside of the tail. The male swimmerets are larger and more rigid. The female swimmerets are softer, smaller, and have rounded edges.</li>\n</ul>\n<ul>\n<li>Live lobsters are not red like those you see in a restaurant or grocery store, after they have been cooked. Most are either olive-green or greenish-brown. Some have orange, reddish, dark green, or black speckles and bluish colors in the joints of their appendages.</li>\n</ul>\n'
+html_string.replace('<ul>', '')
+'\n<li>American lobster is a crustacean with a large shrimp-like body and 10 legs, two of which are large, strong claws.</li>\n</ul>\n\n<li>One claw is a big-toothed crusher claw for pulverizing shells, and the other is a finer-edged ripper claw, resembling a steak knife, for tearing soft flesh.</li>\n</ul>\n\n<li><a href="https://www.greateratlantic.fisheries.noaa.gov/regs/infodocs/lobster_sex_id.pdf">Male and female lobsters</a> can be distinguished by the first pair of swimmerets (pleopods) on the upper portion of the underside of the tail. The male swimmerets are larger and more rigid. The female swimmerets are softer, smaller, and have rounded edges.</li>\n</ul>\n\n<li>Live lobsters are not red like those you see in a restaurant or grocery store, after they have been cooked. Most are either olive-green or greenish-brown. Some have orange, reddish, dark green, or black speckles and bluish colors in the joints of their appendages.</li>\n</ul>\n'
+html_string.replace('<ul>', '').replace('<li>', '')
+'\nAmerican lobster is a crustacean with a large shrimp-like body and 10 legs, two of which are large, strong claws.</li>\n</ul>\n\nOne claw is a big-toothed crusher claw for pulverizing shells, and the other is a finer-edged ripper claw, resembling a steak knife, for tearing soft flesh.</li>\n</ul>\n\n<a href="https://www.greateratlantic.fisheries.noaa.gov/regs/infodocs/lobster_sex_id.pdf">Male and female lobsters</a> can be distinguished by the first pair of swimmerets (pleopods) on the upper portion of the underside of the tail. The male swimmerets are larger and more rigid. The female swimmerets are softer, smaller, and have rounded edges.</li>\n</ul>\n\nLive lobsters are not red like those you see in a restaurant or grocery store, after they have been cooked. Most are either olive-green or greenish-brown. Some have orange, reddish, dark green, or black speckles and bluish colors in the joints of their appendages.</li>\n</ul>\n'
+html_string.replace('<ul>', '').replace('<li>', '').split()
+['American', 'lobster', 'is', 'a', 'crustacean', 'with', 'a', 'large', 'shrimp-like', 'body', 'and', '10', 'legs,', 'two', 'of', 'which', 'are', 'large,', 'strong', 'claws.</li>', '</ul>', 'One', 'claw', 'is', 'a', 'big-toothed', 'crusher', 'claw', 'for', 'pulverizing', 'shells,', 'and', 'the', 'other', 'is', 'a', 'finer-edged', 'ripper', 'claw,', 'resembling', 'a', 'steak', 'knife,', 'for', 'tearing', 'soft', 'flesh.</li>', '</ul>', '<a', 'href="https://www.greateratlantic.fisheries.noaa.gov/regs/infodocs/lobster_sex_id.pdf">Male', 'and', 'female', 'lobsters</a>', 'can', 'be', 'distinguished', 'by', 'the', 'first', 'pair', 'of', 'swimmerets', '(pleopods)', 'on', 'the', 'upper', 'portion', 'of', 'the', 'underside', 'of', 'the', 'tail.', 'The', 'male', 'swimmerets', 'are', 'larger', 'and', 'more', 'rigid.', 'The', 'female', 'swimmerets', 'are', 'softer,', 'smaller,', 'and', 'have', 'rounded', 'edges.</li>', '</ul>', 'Live', 'lobsters', 'are', 'not', 'red', 'like', 'those', 'you', 'see', 'in', 'a', 'restaurant', 'or', 'grocery', 'store,', 'after', 'they', 'have', 'been', 'cooked.', 'Most', 'are', 'either', 'olive-green', 'or', 'greenish-brown.', 'Some', 'have', 'orange,', 'reddish,', 'dark', 'green,', 'or', 'black', 'speckles', 'and', 'bluish', 'colors', 'in', 'the', 'joints', 'of', 'their', 'appendages.</li>', '</ul>']
+html_string.replace('<ul>', '').replace('<li>', '')
+'\nAmerican lobster is a crustacean with a large shrimp-like body and 10 legs, two of which are large, strong claws.</li>\n</ul>\n\nOne claw is a big-toothed crusher claw for pulverizing shells, and the other is a finer-edged ripper claw, resembling a steak knife, for tearing soft flesh.</li>\n</ul>\n\n<a href="https://www.greateratlantic.fisheries.noaa.gov/regs/infodocs/lobster_sex_id.pdf">Male and female lobsters</a> can be distinguished by the first pair of swimmerets (pleopods) on the upper portion of the underside of the tail. The male swimmerets are larger and more rigid. The female swimmerets are softer, smaller, and have rounded edges.</li>\n</ul>\n\nLive lobsters are not red like those you see in a restaurant or grocery store, after they have been cooked. Most are either olive-green or greenish-brown. Some have orange, reddish, dark green, or black speckles and bluish colors in the joints of their appendages.</li>\n</ul>\n'
+fisheries = "<ul>\n<li><a href=\"http://www.westcoast.fisheries.noaa.gov/\">NOAA Fisheries</a> and the <a href=\"http://www.pcouncil.org/\">Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the <a href=\"http://www.pcouncil.org/groundfish/fishery-management-plan/\">Pacific Coast Groundfish Fishery Management Plan</a>:\n<ul>\n<li>Permits and limited entry to the fishery.</li>\n<li>Limit on how much may be harvested in one fishing trip.</li>\n<li>Certain seasons and <a href=\"http://www.westcoast.fisheries.noaa.gov/fisheries/management/groundfish_closures/groundfish_closed_areas.html\">areas are closed</a> to fishing.</li>\n<li>Gear restrictions help reduce bycatch and impacts on habitat.</li>\n<li>A <a href=\"http://www.westcoast.fisheries.noaa.gov/fisheries/groundfish_catch_shares/index.html\">trawl rationalization catch share program</a> that includes:</li>\n<li>Catch limits based on the population status of each fish stock and divided into shares that are allocated to individual fishermen or groups.</li>\n<li>Provisions that allow fishermen to decide how and when to catch their share.</li>\n<li>Yellowtail rockfish have been underutilized. The recent harvest rule changes to the catch share program will allow increased catches of underutilized species, such as yellowtail and chilipepper rockfish, <a href=\"https://www.fishwatch.gov/profiles/lingcod\">lingcod</a>, and <a href=\"https://www.fishwatch.gov/profiles/pacific-cod\">Pacific cod</a>. These changes were possible because of improvements observed in other stocks that had previously constrained the harvest of fish like yellowtail rockfish due to low population levels.</li>\n</ul>\n</li>\n<li><a href=\"https://alaskafisheries.noaa.gov/\">NOAA Fisheries</a> and the <a href=\"https://www.npfmc.org/\">North Pacific Fishery Management Council</a> manage yellowtail rockfish as part of the Gulf of Alaska other rockfish complex.</li>\n<li>Managed under the <a href=\"https://www.npfmc.org/wp-content/PDFdocuments/fmp/GOA/GOAfmp.pdf\">Fishery Management Plan for Groundfish of the Gulf of Alaska</a>:\n<ul>\n<li>There is no directed fishing for this species in the Gulf of Alaska, and only minor amounts are landed incidentally in other fisheries.</li>\n</ul>\n</li>\n</ul>\n"
+fisheries.split('<a href=\"')
+['<ul>\n<li>', 'http://www.westcoast.fisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'http://www.pcouncil.org/">Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the ', 'http://www.pcouncil.org/groundfish/fishery-management-plan/">Pacific Coast Groundfish Fishery Management Plan</a>:\n<ul>\n<li>Permits and limited entry to the fishery.</li>\n<li>Limit on how much may be harvested in one fishing trip.</li>\n<li>Certain seasons and ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/management/groundfish_closures/groundfish_closed_areas.html">areas are closed</a> to fishing.</li>\n<li>Gear restrictions help reduce bycatch and impacts on habitat.</li>\n<li>A ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/groundfish_catch_shares/index.html">trawl rationalization catch share program</a> that includes:</li>\n<li>Catch limits based on the population status of each fish stock and divided into shares that are allocated to individual fishermen or groups.</li>\n<li>Provisions that allow fishermen to decide how and when to catch their share.</li>\n<li>Yellowtail rockfish have been underutilized. The recent harvest rule changes to the catch share program will allow increased catches of underutilized species, such as yellowtail and chilipepper rockfish, ', 'https://www.fishwatch.gov/profiles/lingcod">lingcod</a>, and ', 'https://www.fishwatch.gov/profiles/pacific-cod">Pacific cod</a>. These changes were possible because of improvements observed in other stocks that had previously constrained the harvest of fish like yellowtail rockfish due to low population levels.</li>\n</ul>\n</li>\n<li>', 'https://alaskafisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'https://www.npfmc.org/">North Pacific Fishery Management Council</a> manage yellowtail rockfish as part of the Gulf of Alaska other rockfish complex.</li>\n<li>Managed under the ', 'https://www.npfmc.org/wp-content/PDFdocuments/fmp/GOA/GOAfmp.pdf">Fishery Management Plan for Groundfish of the Gulf of Alaska</a>:\n<ul>\n<li>There is no directed fishing for this species in the Gulf of Alaska, and only minor amounts are landed incidentally in other fisheries.</li>\n</ul>\n</li>\n</ul>\n']
+fisheries.split('<a href=\"')[1]
+'http://www.westcoast.fisheries.noaa.gov/">NOAA Fisheries</a> and the '
+fisheries.split('<a href=\"')[1].split('">')
+['http://www.westcoast.fisheries.noaa.gov/', 'NOAA Fisheries</a> and the ']
+fisheries.split('<a href=\"')[1].split('">')[0]
+'http://www.westcoast.fisheries.noaa.gov/'
+[link for link in fisheries.split('<a href=\"')]
+['<ul>\n<li>', 'http://www.westcoast.fisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'http://www.pcouncil.org/">Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the ', 'http://www.pcouncil.org/groundfish/fishery-management-plan/">Pacific Coast Groundfish Fishery Management Plan</a>:\n<ul>\n<li>Permits and limited entry to the fishery.</li>\n<li>Limit on how much may be harvested in one fishing trip.</li>\n<li>Certain seasons and ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/management/groundfish_closures/groundfish_closed_areas.html">areas are closed</a> to fishing.</li>\n<li>Gear restrictions help reduce bycatch and impacts on habitat.</li>\n<li>A ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/groundfish_catch_shares/index.html">trawl rationalization catch share program</a> that includes:</li>\n<li>Catch limits based on the population status of each fish stock and divided into shares that are allocated to individual fishermen or groups.</li>\n<li>Provisions that allow fishermen to decide how and when to catch their share.</li>\n<li>Yellowtail rockfish have been underutilized. The recent harvest rule changes to the catch share program will allow increased catches of underutilized species, such as yellowtail and chilipepper rockfish, ', 'https://www.fishwatch.gov/profiles/lingcod">lingcod</a>, and ', 'https://www.fishwatch.gov/profiles/pacific-cod">Pacific cod</a>. These changes were possible because of improvements observed in other stocks that had previously constrained the harvest of fish like yellowtail rockfish due to low population levels.</li>\n</ul>\n</li>\n<li>', 'https://alaskafisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'https://www.npfmc.org/">North Pacific Fishery Management Council</a> manage yellowtail rockfish as part of the Gulf of Alaska other rockfish complex.</li>\n<li>Managed under the ', 'https://www.npfmc.org/wp-content/PDFdocuments/fmp/GOA/GOAfmp.pdf">Fishery Management Plan for Groundfish of the Gulf of Alaska</a>:\n<ul>\n<li>There is no directed fishing for this species in the Gulf of Alaska, and only minor amounts are landed incidentally in other fisheries.</li>\n</ul>\n</li>\n</ul>\n']
+[link for link in fisheries.split('<a href=\"') if link.startwith('http')]
+Traceback (most recent call last):
+  File "C:\Users\SVI22\AppData\Local\Programs\Python\Python39\lib\code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<input>", line 1, in <module>
+  File "<input>", line 1, in <listcomp>
+AttributeError: 'str' object has no attribute 'startwith'
+[link for link in fisheries.split('<a href=\"') if link.startswith('http')]
+['http://www.westcoast.fisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'http://www.pcouncil.org/">Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the ', 'http://www.pcouncil.org/groundfish/fishery-management-plan/">Pacific Coast Groundfish Fishery Management Plan</a>:\n<ul>\n<li>Permits and limited entry to the fishery.</li>\n<li>Limit on how much may be harvested in one fishing trip.</li>\n<li>Certain seasons and ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/management/groundfish_closures/groundfish_closed_areas.html">areas are closed</a> to fishing.</li>\n<li>Gear restrictions help reduce bycatch and impacts on habitat.</li>\n<li>A ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/groundfish_catch_shares/index.html">trawl rationalization catch share program</a> that includes:</li>\n<li>Catch limits based on the population status of each fish stock and divided into shares that are allocated to individual fishermen or groups.</li>\n<li>Provisions that allow fishermen to decide how and when to catch their share.</li>\n<li>Yellowtail rockfish have been underutilized. The recent harvest rule changes to the catch share program will allow increased catches of underutilized species, such as yellowtail and chilipepper rockfish, ', 'https://www.fishwatch.gov/profiles/lingcod">lingcod</a>, and ', 'https://www.fishwatch.gov/profiles/pacific-cod">Pacific cod</a>. These changes were possible because of improvements observed in other stocks that had previously constrained the harvest of fish like yellowtail rockfish due to low population levels.</li>\n</ul>\n</li>\n<li>', 'https://alaskafisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'https://www.npfmc.org/">North Pacific Fishery Management Council</a> manage yellowtail rockfish as part of the Gulf of Alaska other rockfish complex.</li>\n<li>Managed under the ', 'https://www.npfmc.org/wp-content/PDFdocuments/fmp/GOA/GOAfmp.pdf">Fishery Management Plan for Groundfish of the Gulf of Alaska</a>:\n<ul>\n<li>There is no directed fishing for this species in the Gulf of Alaska, and only minor amounts are landed incidentally in other fisheries.</li>\n</ul>\n</li>\n</ul>\n']
+[link for link in fisheries.split('<a href=\"') if link.startswith('http')][0]
+'http://www.westcoast.fisheries.noaa.gov/">NOAA Fisheries</a> and the '
+[link for link in fisheries.split('<a href=\"') if link.startswith('http')][1]
+'http://www.pcouncil.org/">Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the '
+[link for link in fisheries.split('<a href=\"') if link.startswith('http')][1].split('">')
+['http://www.pcouncil.org/', 'Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the ']
+type([link for link in fisheries.split('<a href=\"') if link.startswith('http')][1].split('">'))
+<class 'list'>
+[link for link in fisheries.split('<a href=\"') if link.startswith('http')][1].split('">')[-1]
+'Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the '
+[link for link in fisheries.split('<a href=\"') if link.startswith('http')][1].split('">')[0]
+'http://www.pcouncil.org/'
+[link for link in fisheries.split('<a href=\"') if link.startswith('http')]
+['http://www.westcoast.fisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'http://www.pcouncil.org/">Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the ', 'http://www.pcouncil.org/groundfish/fishery-management-plan/">Pacific Coast Groundfish Fishery Management Plan</a>:\n<ul>\n<li>Permits and limited entry to the fishery.</li>\n<li>Limit on how much may be harvested in one fishing trip.</li>\n<li>Certain seasons and ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/management/groundfish_closures/groundfish_closed_areas.html">areas are closed</a> to fishing.</li>\n<li>Gear restrictions help reduce bycatch and impacts on habitat.</li>\n<li>A ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/groundfish_catch_shares/index.html">trawl rationalization catch share program</a> that includes:</li>\n<li>Catch limits based on the population status of each fish stock and divided into shares that are allocated to individual fishermen or groups.</li>\n<li>Provisions that allow fishermen to decide how and when to catch their share.</li>\n<li>Yellowtail rockfish have been underutilized. The recent harvest rule changes to the catch share program will allow increased catches of underutilized species, such as yellowtail and chilipepper rockfish, ', 'https://www.fishwatch.gov/profiles/lingcod">lingcod</a>, and ', 'https://www.fishwatch.gov/profiles/pacific-cod">Pacific cod</a>. These changes were possible because of improvements observed in other stocks that had previously constrained the harvest of fish like yellowtail rockfish due to low population levels.</li>\n</ul>\n</li>\n<li>', 'https://alaskafisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'https://www.npfmc.org/">North Pacific Fishery Management Council</a> manage yellowtail rockfish as part of the Gulf of Alaska other rockfish complex.</li>\n<li>Managed under the ', 'https://www.npfmc.org/wp-content/PDFdocuments/fmp/GOA/GOAfmp.pdf">Fishery Management Plan for Groundfish of the Gulf of Alaska</a>:\n<ul>\n<li>There is no directed fishing for this species in the Gulf of Alaska, and only minor amounts are landed incidentally in other fisheries.</li>\n</ul>\n</li>\n</ul>\n']
+[link.split('">') for link in fisheries.split('<a href=\"') if link.startswith('http')]
+[['http://www.westcoast.fisheries.noaa.gov/', 'NOAA Fisheries</a> and the '], ['http://www.pcouncil.org/', 'Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the '], ['http://www.pcouncil.org/groundfish/fishery-management-plan/', 'Pacific Coast Groundfish Fishery Management Plan</a>:\n<ul>\n<li>Permits and limited entry to the fishery.</li>\n<li>Limit on how much may be harvested in one fishing trip.</li>\n<li>Certain seasons and '], ['http://www.westcoast.fisheries.noaa.gov/fisheries/management/groundfish_closures/groundfish_closed_areas.html', 'areas are closed</a> to fishing.</li>\n<li>Gear restrictions help reduce bycatch and impacts on habitat.</li>\n<li>A '], ['http://www.westcoast.fisheries.noaa.gov/fisheries/groundfish_catch_shares/index.html', 'trawl rationalization catch share program</a> that includes:</li>\n<li>Catch limits based on the population status of each fish stock and divided into shares that are allocated to individual fishermen or groups.</li>\n<li>Provisions that allow fishermen to decide how and when to catch their share.</li>\n<li>Yellowtail rockfish have been underutilized. The recent harvest rule changes to the catch share program will allow increased catches of underutilized species, such as yellowtail and chilipepper rockfish, '], ['https://www.fishwatch.gov/profiles/lingcod', 'lingcod</a>, and '], ['https://www.fishwatch.gov/profiles/pacific-cod', 'Pacific cod</a>. These changes were possible because of improvements observed in other stocks that had previously constrained the harvest of fish like yellowtail rockfish due to low population levels.</li>\n</ul>\n</li>\n<li>'], ['https://alaskafisheries.noaa.gov/', 'NOAA Fisheries</a> and the '], ['https://www.npfmc.org/', 'North Pacific Fishery Management Council</a> manage yellowtail rockfish as part of the Gulf of Alaska other rockfish complex.</li>\n<li>Managed under the '], ['https://www.npfmc.org/wp-content/PDFdocuments/fmp/GOA/GOAfmp.pdf', 'Fishery Management Plan for Groundfish of the Gulf of Alaska</a>:\n<ul>\n<li>There is no directed fishing for this species in the Gulf of Alaska, and only minor amounts are landed incidentally in other fisheries.</li>\n</ul>\n</li>\n</ul>\n']]
+ll = [link.split('">') for link in fisheries.split('<a href=\"') if link.startswith('http')]
+l = [link for link in fisheries.split('<a href=\"') if link.startswith('http')]
+ll[0]
+['http://www.westcoast.fisheries.noaa.gov/', 'NOAA Fisheries</a> and the ']
+ll[0][0]
+'http://www.westcoast.fisheries.noaa.gov/'
+ll = [link.split('">')[0] for link in fisheries.split('<a href=\"') if link.startswith('http')]
+ll = []
+for  link in fisheries.split('<a href=\"'):
+    if link.startswith('http'):
+        ll.append(link)
+
+ll
+['http://www.westcoast.fisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'http://www.pcouncil.org/">Pacific Fishery Management Council</a> manage the yellowtail rockfish fishery on the West Coast.</li>\n<li>Yellowtail rockfish are managed as a single stock north of Cape Mendocino, California, and southward, as part of the southern Pacific coast minor shelf rockfish complex.</li>\n<li>Managed under the ', 'http://www.pcouncil.org/groundfish/fishery-management-plan/">Pacific Coast Groundfish Fishery Management Plan</a>:\n<ul>\n<li>Permits and limited entry to the fishery.</li>\n<li>Limit on how much may be harvested in one fishing trip.</li>\n<li>Certain seasons and ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/management/groundfish_closures/groundfish_closed_areas.html">areas are closed</a> to fishing.</li>\n<li>Gear restrictions help reduce bycatch and impacts on habitat.</li>\n<li>A ', 'http://www.westcoast.fisheries.noaa.gov/fisheries/groundfish_catch_shares/index.html">trawl rationalization catch share program</a> that includes:</li>\n<li>Catch limits based on the population status of each fish stock and divided into shares that are allocated to individual fishermen or groups.</li>\n<li>Provisions that allow fishermen to decide how and when to catch their share.</li>\n<li>Yellowtail rockfish have been underutilized. The recent harvest rule changes to the catch share program will allow increased catches of underutilized species, such as yellowtail and chilipepper rockfish, ', 'https://www.fishwatch.gov/profiles/lingcod">lingcod</a>, and ', 'https://www.fishwatch.gov/profiles/pacific-cod">Pacific cod</a>. These changes were possible because of improvements observed in other stocks that had previously constrained the harvest of fish like yellowtail rockfish due to low population levels.</li>\n</ul>\n</li>\n<li>', 'https://alaskafisheries.noaa.gov/">NOAA Fisheries</a> and the ', 'https://www.npfmc.org/">North Pacific Fishery Management Council</a> manage yellowtail rockfish as part of the Gulf of Alaska other rockfish complex.</li>\n<li>Managed under the ', 'https://www.npfmc.org/wp-content/PDFdocuments/fmp/GOA/GOAfmp.pdf">Fishery Management Plan for Groundfish of the Gulf of Alaska</a>:\n<ul>\n<li>There is no directed fishing for this species in the Gulf of Alaska, and only minor amounts are landed incidentally in other fisheries.</li>\n</ul>\n</li>\n</ul>\n']
+for  link in fisheries.split('<a href=\"'):
+    if link.startswith('http'):
+        ll.append(link.split('">')[0])
+
+ll=[]
+for  link in fisheries.split('<a href=\"'):
+    if link.startswith('http'):
+        ll.append(link.split('">')[0])
+
+"Saturated Fatty Acids, Total".split(','), ', '.join(list(reversed("Saturated Fatty Acids   , Total".split(',')))).strip()
